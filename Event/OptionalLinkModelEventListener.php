@@ -316,9 +316,9 @@ class OptionalLinkModelEventListener extends BcModelEventListener {
 				// もしオプショナルリンク設定の初期データ作成を行ってない事を考慮して判定している
 				if ($_data) {
 					// コピー元データがある時
+					$_data['OptionalLink']['id'] = null;
 					$data = Hash::merge($data, $_data);
 					$data['OptionalLinkConfig']['blog_content_id'] = $contentId;
-					unset($data['OptionalLinkConfig']['id']);
 				} else {
 					// コピー元データがない時
 					$data['OptionalLinkConfig']['blog_content_id'] = $modelId;
